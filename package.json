@@ -1,0 +1,50 @@
+{
+  "name": "ismafer-pages",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "prisma generate && next dev",
+    "build": "prisma generate && prisma db push && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "npx patch-package",
+    "prisma": "npx prisma"
+  },
+  "dependencies": {
+    "@auth/mongodb-adapter": "^2.0.9",
+    "@auth/prisma-adapter": "^1.0.11",
+    "@imgly/background-removal": "^1.2.1",
+    "@next-auth/prisma-adapter": "^0.4.4-canary.81",
+    "@prisma/client": "^5.7.1",
+    "axios": "^1.6.2",
+    "bcrypt": "^5.1.1",
+    "fabric": "^5.3.0",
+    "fabric-history": "^1.7.0",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.1",
+    "mongodb": "^6.3.0",
+    "next": "14.0.4",
+    "next-auth": "^4.24.5",
+    "patch-package": "^8.0.0",
+    "react": "^18",
+    "react-colorful": "^5.6.1",
+    "react-dom": "^18",
+    "react-hook-form": "^7.49.2",
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.12.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.0.1",
+    "daisyui": "^4.4.20",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "postcss": "^8",
+    "prisma": "^5.7.1",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  }
+}
