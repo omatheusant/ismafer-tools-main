@@ -1,10 +1,9 @@
 import { CreateUser } from '@/components/Admin/CreateUser';
 import { UsersTable } from '@/components/Admin/UsersTable';
-import getUsers from '@/services/getUsers';
-import { User } from '@/types/users';
+import useGetUsers from '@/hooks/useGetUsers';
 import { useSession } from 'next-auth/react'
 import Link from 'next/link';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { GoSearch } from "react-icons/go";
 import { IoChevronBackSharp } from 'react-icons/io5';
 
@@ -12,17 +11,8 @@ import { IoChevronBackSharp } from 'react-icons/io5';
 const AdminPage = () => {
   const { data: session } = useSession();
   const [searchValue, setSearchValue] = useState('');
-  const [users, setUsers] = useState<User[]>([])
+  const { data: users = [], isLoading, isError } = useGetUsers();
 
-  useEffect(() => {
-    getUsers()
-      .then((usersData) => {
-        setUsers(usersData);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, [])
 
   if (session?.user.role !== 'admin') {
     return (<>Acesso negado!</>)
@@ -60,6 +50,8 @@ const AdminPage = () => {
             <CreateUser />
           </div>
           <div className='w-full bg-[--bg-color] py-6 px-5 mt-10 rounded-sm border-[--dark] border shadow-md'>
+            {isLoading && <p>Buscando usuários...</p>}
+            {isError && <p>Erro ao buscar usuários</p>}
             <UsersTable users={filteredUsers} />
           </div>
         </div>
