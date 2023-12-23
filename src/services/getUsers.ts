@@ -1,15 +1,15 @@
-import prisma from '@/lib/prisma';
+import { User } from '@/types/users';
 import axios from 'axios';
-import { useState } from 'react';
 
-export default function GetUsers () {
-  const [users, setUsers] = useState([])
 
-    axios.get('/api/users')
-    .then((res) => setUsers(res.data))
-    .catch((error) => {
-      console.log(error.message)
+
+export default function getUsers(): Promise<User[]> {
+  return axios.get<User[]>('/api/users')
+    .then((res) => {
+      return res.data;
     })
-
-    return users
+    .catch((error) => {
+      console.error(error);
+      return [];
+    });
 }

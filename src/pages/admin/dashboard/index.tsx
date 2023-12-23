@@ -1,26 +1,28 @@
 import { CreateUser } from '@/components/Admin/CreateUser';
 import { UsersTable } from '@/components/Admin/UsersTable';
-import GetUsers from '@/services/getUsers';
+import getUsers from '@/services/getUsers';
+import { User } from '@/types/users';
 import { useSession } from 'next-auth/react'
 import Link from 'next/link';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { GoSearch } from "react-icons/go";
 import { IoChevronBackSharp } from 'react-icons/io5';
-
-
-type UsersList = {
-  name: string,
-  username: string,
-  role: string
-}[]
-
 
 
 const AdminPage = () => {
   const { data: session } = useSession();
   const [searchValue, setSearchValue] = useState('');
+  const [users, setUsers] = useState<User[]>([])
 
-  let users: UsersList = GetUsers()
+  useEffect(() => {
+    getUsers()
+      .then((usersData) => {
+        setUsers(usersData);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [])
 
   if (session?.user.role !== 'admin') {
     return (<>Acesso negado!</>)
