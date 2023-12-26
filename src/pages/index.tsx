@@ -6,12 +6,11 @@ import { AdminMenu } from '@/components/Admin/AdminMenu';
 
 export default function Home() {
   const {data: session} = useSession()
-  console.log(session?.user)
   if (session?.user) {
     return (
       <main className="hero min-h-screen font-medium">
         {session.user.role === "admin" && (
-          <div className='absolute left-2 top-2'>
+          <div role='adminMenu' className='absolute left-2 top-2'>
             <AdminMenu/>
           </div>
         )}
@@ -35,5 +34,7 @@ export default function Home() {
         </div>
       </main>
     )
+  } else {
+    <div role='noSession'>Você precisa estar logado para continuar</div>
   }
 }
