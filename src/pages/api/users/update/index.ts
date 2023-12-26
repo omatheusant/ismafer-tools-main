@@ -1,8 +1,8 @@
-import { UserBody } from '@/types/users';
 import { NextApiResponse } from 'next';
 import prisma from '@/lib/prisma';
+import { User } from '@/types/users';
 
-interface AtualUser extends UserBody {
+interface AtualUser extends User {
   atualUser: string
 }
 
