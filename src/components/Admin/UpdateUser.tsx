@@ -5,6 +5,8 @@ import { FormEvent, useState } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import Input from '../shared/Input/Input';
+import { useRouter } from 'next/router';
+
 
 interface userInfoProps {
   name: string,
@@ -21,6 +23,7 @@ export const UpdateUser = ({ user }: any) => {
     atualUser: user.username
   });
   const [loading, setLoading] = useState(false);
+  const router = useRouter()
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault()
@@ -28,8 +31,8 @@ export const UpdateUser = ({ user }: any) => {
     axios
       .post('/api/users/update', userInfo)
       .then(() => {
+        router.reload()
         toast.success("Usuário editado com sucesso!")
-        setLoading(false)
       })
       .catch((error) => {
         setLoading(false)

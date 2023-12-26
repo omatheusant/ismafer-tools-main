@@ -15,7 +15,7 @@ const AdminPage = () => {
 
 
   if (session?.user.role !== 'admin') {
-    return (<>Acesso negado!</>)
+    return (<>Acesso negado.</>)
   }
 
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {

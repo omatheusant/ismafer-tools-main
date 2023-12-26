@@ -5,16 +5,19 @@ import { useState } from 'react';
 import LoadingDots from '../shared/Loading/LoadingDots';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { useRouter } from 'next/router';
 
 
 export const DeleteUser = ({ user }: any) => {
   const [loading, setLoading] = useState(false);
+  const router = useRouter()
 
   const handleClick = () => {
     setLoading(true)
     axios
       .post('/api/users/delete', user)
       .then(()=>{
+        router.reload()
         toast.success("Usuário removido com sucesso!")
       })
       .catch((error) => {
