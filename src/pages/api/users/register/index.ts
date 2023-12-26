@@ -1,9 +1,13 @@
-import { NextResponse } from 'next/server';
 import { hash } from 'bcrypt';
 import prisma from '@/lib/prisma';
 import { NextApiResponse } from 'next';
-import { UserBody } from '@/types/users';
 
+interface UserBody extends ReadableStream<Uint8Array> {
+  name: string,
+  username: string,
+  password: string,
+  role: string
+}
 
 export default async function handler(req: Request, res: NextApiResponse) {
   if (req.method === 'POST') {
