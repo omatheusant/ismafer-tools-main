@@ -127,7 +127,7 @@ const ImageCutter = () => {
   return (
     <div className="flex flex-col justify-center items-center max-w-xl mx-auto p-4">
       <div className="w-full flex justify-center mb-10">
-        <img src={'https://i.postimg.cc/cJnKqhgV/logo-ismafer.jpg'} alt='logo' width={200} />
+        <img src={'https://i.postimg.cc/d12jqFhK/logo-ismafer-rem.png'} alt='logo' width={200} />
       </div>
       <h1 className="text-3xl font-bold text-[--brand] mb-7">Cortador de Imagens</h1>
       <input
