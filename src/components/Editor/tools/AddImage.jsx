@@ -2,6 +2,7 @@ import { fabric } from 'fabric'
 import { FaCloudUploadAlt } from 'react-icons/fa';
 
 export const AddImage = ({ canvas }) => {
+  
   const handleImage = (e) => {
     const file = e.target.files[0];
     if (file) {
