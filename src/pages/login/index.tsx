@@ -17,7 +17,7 @@ const SignIn = () => {
               className='rounded-full h-auto w-auto'
             />
           </Link>
-          <h3 className="text-xl font-semibold">Login</h3>
+          <h3 className="text-xl font-semibold text-[--light]">Login</h3>
           <p className="text-sm text-gray-500">
             Use suas credenciais para fazer o login
           </p>
