@@ -27,7 +27,7 @@ export default async function handler(req: Request, res: NextApiResponse) {
       data: {
         name: body?.name,
         username: body?.username,
-        password: await hash(body?.password, 10),
+        password: body?.password,
         role: body?.role
       }
     })

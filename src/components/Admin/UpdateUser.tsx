@@ -12,6 +12,7 @@ interface userInfoProps {
   name: string,
   username: string,
   role: string,
+  password: string,
   atualUser: string
 }
 
@@ -20,6 +21,7 @@ export const UpdateUser = ({ user }: any) => {
     name: user.name,
     username: user.username,
     role: user.role,
+    password: user.password,
     atualUser: user.username
   });
   const [loading, setLoading] = useState(false);
@@ -83,11 +85,21 @@ export const UpdateUser = ({ user }: any) => {
               type='text' />
           </div>
           <div className='flex flex-col'>
-            <label htmlFor="password">Cargo</label>
+            <label htmlFor="role">Cargo</label>
             <Input
               name='role'
               id='role'
               value={userInfo.role}
+              onChange={handleChange}
+              placeholder='Digite o cargo...'
+              type='text' />
+          </div>
+          <div className='flex flex-col'>
+            <label htmlFor="password">Senha</label>
+            <Input
+              name='password'
+              id='password'
+              value={userInfo.password}
               onChange={handleChange}
               placeholder='Digite o cargo...'
               type='text' />

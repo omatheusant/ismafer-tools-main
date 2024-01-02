@@ -10,7 +10,7 @@ export default function Home() {
     return (
       <main className="hero min-h-screen font-medium">
         {session.user.role === "admin" && (
-          <div role='adminMenu' className='absolute left-2 top-2'>
+          <div role='adminMenu' className='absolute left-2 top-2 text-[--light]'>
             <AdminMenu/>
           </div>
         )}

@@ -14,7 +14,7 @@ export const Modal = ({ children, title, id, ...props }: ModalProps) => {
     <>
       < button {...props} onClick={() => (document.getElementById(`${id}`) as HTMLDialogElement)!.showModal()}>{title}</button >
       <dialog id={id} className="modal">
-        <div className="modal-box bg-[--bg-color] overflow-hidden">
+        <div className="modal-box bg-[--bg-color]">
           {children}
           <div className="modal-action">
             <form method="dialog">

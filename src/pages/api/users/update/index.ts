@@ -20,6 +20,7 @@ export default async function handler(req: any, res: NextApiResponse) {
     data: {
       name: user.name,
       username: user.username,
+      password: user.password,
       role: user.role
     }
   })
