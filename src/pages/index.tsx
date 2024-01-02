@@ -29,7 +29,7 @@ export default function Home() {
                 <button className="btn bg-[--brand]  hover:bg-orange-500 text-[--dark] text-xl w-full">Criação de KIT</button>
               </Link>
             </div>
-            <button className='absolute right-5 top-5 flex gap-2 items-center' onClick={() => signOut()}>Desconectar<FaSignOutAlt/></button>
+            <button className='absolute right-5 top-5 flex gap-2 items-center text-[--light]' onClick={() => signOut()}>Desconectar<FaSignOutAlt/></button>
           </div>
         </div>
       </main>
