@@ -11,11 +11,11 @@ export const Header = ({ canvas }) => {
   };
 
   return (
-    <div className='bg-[--bg-color] shadow-md shadow-black w-full h-[14vh] flex items-center z-20 px-5 justify-between fixed top-0'>
+    <div className='bg-[--bg-color] h-[15vh]  shadow-md shadow-black w-screen flex items-center z-20  justify-between top-0 fixed px-[2vw]'>
       <Link href={'/'}>
-        <IoChevronBackSharp size='4vw' color="#FFC100" />
+        <IoChevronBackSharp size='5vw' color="#FFC100" />
       </Link>
-      <button className='w-[10vw] h-[3vw] bg-[--brand] font-bold text-[1.4vw] gap-2 flex items-center bg-center py-2 px-5 justify-center text-[--dark]' onClick={handleDownload}> Salvar <CiSaveDown2 className='text-[2vw]' /> </button>
+      <button className='bg-[--brand] font-bold text-[2vw] gap-[1vw] flex items-center bg-center py-[1vh] px-[1vw] justify-center text-[--dark] rounded' onClick={handleDownload}> Salvar <CiSaveDown2 size='3vw' /> </button>
     </div>
   );
 }

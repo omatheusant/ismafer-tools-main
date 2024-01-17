@@ -1,4 +1,3 @@
-import { hash } from 'bcrypt';
 import prisma from '@/lib/prisma';
 import { NextApiResponse } from 'next';
 
@@ -6,6 +5,7 @@ interface UserBody extends ReadableStream<Uint8Array> {
   name: string,
   username: string,
   password: string,
+  local: string, 
   role: string
 }
 
@@ -28,6 +28,7 @@ export default async function handler(req: Request, res: NextApiResponse) {
         name: body?.name,
         username: body?.username,
         password: body?.password,
+        local: body?.local,
         role: body?.role
       }
     })

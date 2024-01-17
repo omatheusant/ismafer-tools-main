@@ -10,7 +10,8 @@ import LoadingDots from '../shared/Loading/LoadingDots';
 interface userInfoProps {
   name: string,
   username: string,
-  password: string
+  password: string,
+  local: string,
   role: string
 }
 
@@ -19,6 +20,7 @@ export const CreateUser = () => {
     name: '',
     username: '',
     password: '',
+    local: '',
     role: ''
   });
   const [loading, setLoading] = useState(false);
@@ -88,10 +90,20 @@ export const CreateUser = () => {
                   value={userInfo.password}
                   onChange={handleChange}
                   placeholder='Digite o a senha...'
-                  type='password' />
+                  type='text' />
               </div>
               <div className='flex flex-col'>
-                <label htmlFor="password">Cargo</label>
+                <label htmlFor="password">Local</label>
+                <Input
+                  name='local'
+                  id='local'
+                  value={userInfo.local}
+                  onChange={handleChange}
+                  placeholder='Digite o local...'
+                  type='text' />
+              </div>
+              <div className='flex flex-col'>
+                <label htmlFor="role">Cargo</label>
                 <Input
                   name='role'
                   id='role'

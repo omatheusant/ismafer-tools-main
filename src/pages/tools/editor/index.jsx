@@ -1,43 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
-import { fabric } from 'fabric';
+import { fabric } from "fabric";
+import { Dashboard } from "../../../components/Editor/Dashboard";
 
-import { Header } from '@/components/Editor/Header'
-import { SideBar } from '@/components/Editor/SideBar';
-import { AddImage } from '@/components/Editor/tools/AddImage';
-import { AddText } from '@/components/Editor/tools/AddText';
-import { Resize } from '@/components/Editor/tools/Resize';
-import { Background } from '@/components/Editor/tools/Background';
-import { Eraser } from '@/components/Editor/tools/Eraser';
 const Editor = () => {
   const [canvas, setCanvas] = useState(null);
   const [size, setSize] = useState({ width: 1700, height: 1200 });
-
 
   const initCanvas = () => {
     if (canvas) {
       canvas.dispose();
     }
     if (typeof fabric !== undefined) {
-      import('fabric-history')
-        .then(() => {
-          const newCanvas = new fabric.Canvas('canvas', {
-            height: size.height,
-            width: size.width,
-            backgroundColor: 'white'
-          });
-          setCanvas(newCanvas);
-        })
+      import("fabric-history").then(() => {
+        const newCanvas = new fabric.Canvas("canvas", {
+          height: size.height,
+          width: size.width,
+          backgroundColor: "white",
+        });
+        setCanvas(newCanvas);
+      });
     }
   };
-  
+
   var _clipboard = null;
 
   const copy = () => {
     canvas.getActiveObject().clone(function (cloned) {
       _clipboard = cloned;
-    })
-  }
+    });
+  };
 
   const paste = () => {
     // clone again, so you can do multiple copies.
@@ -48,7 +40,7 @@ const Editor = () => {
         top: clonedObj.top + 10,
         evented: true,
       });
-      if (clonedObj.type === 'activeSelection') {
+      if (clonedObj.type === "activeSelection") {
         // active selection needs a reference to the canvas.
         clonedObj.canvas = canvas;
         clonedObj.forEachObject(function (obj) {
@@ -64,7 +56,7 @@ const Editor = () => {
       canvas.setActiveObject(clonedObj);
       canvas.requestRenderAll();
     });
-  }
+  };
 
   useEffect(() => {
     initCanvas();
@@ -73,7 +65,7 @@ const Editor = () => {
   useEffect(() => {
     if (canvas) {
       const handleKeyDown = (e) => {
-        if (e.key === 'Delete') {
+        if (e.key === "Delete") {
           const activeObjects = canvas.getActiveObjects();
           if (activeObjects.length > 0) {
             canvas.discardActiveObject();
@@ -82,24 +74,24 @@ const Editor = () => {
           }
         }
 
-        if (e.ctrlKey && e.key === 'z') {
+        if (e.ctrlKey && e.key === "z") {
           canvas.undo();
         }
-        if (e.ctrlKey && e.key === 'y') {
+        if (e.ctrlKey && e.key === "y") {
           canvas.redo();
         }
-        if (e.ctrlKey && e.key === 'c') {
+        if (e.ctrlKey && e.key === "c") {
           copy();
         }
 
-        if (e.ctrlKey && e.key === 'v') {
+        if (e.ctrlKey && e.key === "v") {
           paste();
         }
       };
-      window.addEventListener('keydown', handleKeyDown);
+      window.addEventListener("keydown", handleKeyDown);
 
       return () => {
-        window.removeEventListener('keydown', handleKeyDown);
+        window.removeEventListener("keydown", handleKeyDown);
       };
     }
   }, [canvas]);
@@ -114,30 +106,23 @@ const Editor = () => {
         }
       };
 
-      canvas.on('mouse:dblclick', handleDoubleClick);
+      canvas.on("mouse:dblclick", handleDoubleClick);
 
       return () => {
-        canvas.off('mouse:dblclick', handleDoubleClick);
+        canvas.off("mouse:dblclick", handleDoubleClick);
       };
     }
   }, [canvas]);
 
   return (
     <div>
-      <Header canvas={canvas} />
-      <SideBar>
-        <Resize setSize={setSize} />
-        <AddText canvas={canvas} />
-        <AddImage canvas={canvas} />
-        <Eraser canvas={canvas} />
-        <Background canvas={canvas} />
-      </SideBar>
-
-      <div className='w-full mt-10 flex justify-center h-screen items-center z-0'>
-        <canvas id="canvas"></canvas>
-      </div>
+      <Dashboard canvas={canvas} setSize={setSize}>
+        <div className="w-full mt-10 flex justify-center h-screen items-center z-0">
+          <canvas id="canvas"></canvas>
+        </div>
+      </Dashboard>
     </div>
   );
-}
+};
 
-export default Editor
+export default Editor;

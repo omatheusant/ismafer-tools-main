@@ -14,7 +14,7 @@ export const AddImage = ({ canvas }) => {
           const formData = new FormData();
           formData.append('psdFile', file);
 
-          const response = await axios.post('http://localhost:3000/upload', formData, {
+          const response = await axios.post('http://localhost:3001/upload', formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },

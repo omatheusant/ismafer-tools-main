@@ -5,6 +5,7 @@ interface User {
   name: string;
   username: string;
   role: string;
+  local: string;
   password?: string
 }
 
@@ -21,6 +22,7 @@ export const UsersTable = ({ users }: UserTableProps) => {
             <th>Nome</th>
             <th>Usuário</th>
             <th>Cargo</th>
+            <th>Local</th>
             <th>Senha</th>
             <th>Ações</th>
           </tr>
@@ -33,6 +35,7 @@ export const UsersTable = ({ users }: UserTableProps) => {
                   <td>{user.name}</td>
                   <td>{user.username}</td>
                   <td>{user.role}</td>
+                  <td>{user.local}</td>
                   <td>{user.password}</td>
                   <td className='flex text-[15px] gap-3'>
                     <DeleteUser user={user} />

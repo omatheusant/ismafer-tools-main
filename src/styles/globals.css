@@ -28,7 +28,7 @@ background: radial-gradient(at center, #1A1A1A, #010101);  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 1vw;
 }
 
 /* Track */
