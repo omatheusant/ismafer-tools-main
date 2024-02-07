@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
@@ -26,7 +24,7 @@ First, run the development server:<!-- Improved compatibility of back to top lin
 <br />
 <div align="center">
   <a href="https://github.com/github_username/ismafer-tools-main">
-    <img src="/images/logo.jpeg" alt="Logo" width="80" height="80">
+    <img src="./public/images/logo.jpeg" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">project_title</h3>
