@@ -1,7 +1,3 @@
-## Getting Started
-
-First, run the development server:<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
-
 <a name="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
@@ -27,19 +23,19 @@ First, run the development server:<!-- Improved compatibility of back to top lin
     <img src="./public/images/logo.jpeg" alt="Logo" width="250">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Ismafer Tools</h3>
 
   <p align="center">
-    project_description
+    A web set of image editing tools for design focused on e-commerce build with Next.js and Fabric.js
     <br />
-    <a href="https://github.com/github_username/ismafer-tools-main"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/omatheusant/ismafer-tools-main"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/ismafer-tools-main">View Demo</a>
+    <a href="https://github.com/omatheusant/ismafer-tools-main">View Demo</a>
     ·
-    <a href="https://github.com/github_username/ismafer-tools-main/issues">Report Bug</a>
+    <a href="https://github.com/omatheusant/ismafer-tools-main/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/ismafer-tools-main/issues">Request Feature</a>
+    <a href="https://github.com/omatheusant/ismafer-tools-main/issues">Request Feature</a>
   </p>
 </div>
 
@@ -73,7 +69,7 @@ First, run the development server:<!-- Improved compatibility of back to top lin
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://i.postimg.cc/W4Tj47Z4/ismafer-tools-main-vercel-app.png)
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
@@ -83,12 +79,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 - [![Next][Next.js]][Next-url]
 - [![React][React.js]][React-url]
-- [![Vue][Vue.js]][Vue-url]
-- [![Angular][Angular.io]][Angular-url]
-- [![Svelte][Svelte.dev]][Svelte-url]
-- [![Laravel][Laravel.com]][Laravel-url]
-- [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-- [![JQuery][JQuery.com]][JQuery-url]
+-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
